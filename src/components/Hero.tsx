@@ -71,7 +71,7 @@ export default function Hero() {
         </div>
 
         {/* Hero Right Visual (Glassmorphism Card) */}
-        <div className="lg:col-span-5" aria-hidden="true">
+        <div className="lg:col-span-5">
           <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <span className="text-xs uppercase tracking-wider font-semibold text-slate-300">
