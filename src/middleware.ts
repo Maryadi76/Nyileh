@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { updateSession } from "@/lib/supabase/middleware";
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   const host = req.headers.get("host") ?? "";
   if (host.startsWith("www.nyileh.id")) {
     const url = req.nextUrl.clone();
@@ -10,7 +11,8 @@ export function middleware(req: NextRequest) {
     url.port = "";
     return NextResponse.redirect(url, 301);
   }
-  return NextResponse.next();
+
+  return await updateSession(req);
 }
 
 export const config = {

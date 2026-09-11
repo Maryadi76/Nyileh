@@ -1,27 +1,56 @@
-export default function Testimonials() {
-  const reviews = [
-    {
-      stars: 5,
-      text: "Sewa 20 unit HT untuk jaga keamanan acara pernikahan. Semua alat berfungsi sempurna, respon cepat, harga sangat terjangkau. Pasti akan sewa lagi!",
-      name: "Ahmad Rasyid",
-      role: "Panitia Wedding, Yogyakarta",
-      avatar: "AR",
-    },
-    {
-      stars: 5,
-      text: "Proyektor dan sound system untuk seminar kampus. Pengiriman tepat waktu, teknisi bantu setup, hasil memuaskan. Recommended banget untuk EO dan organisasi kampus!",
-      name: "Dinda Sari",
-      role: "BEM Universitas, Yogyakarta",
-      avatar: "DS",
-    },
-    {
-      stars: 5,
-      text: "Paket lengkap untuk acara olahraga, dari HT koordinator sampai sound system lapangan. Harga bersaing, pelayanan profesional. Sudah 3x sewa di sini.",
-      name: "Budi Wibowo",
-      role: "Penyelenggara Turnamen, Sleman",
-      avatar: "BW",
-    },
-  ];
+import { createClient } from "@/lib/supabase/server";
+
+interface ReviewItem {
+  id?: string;
+  stars: number;
+  text: string;
+  name: string;
+  role: string;
+  avatar?: string;
+}
+
+const defaultReviews: ReviewItem[] = [
+  {
+    stars: 5,
+    text: "Sewa 20 unit HT untuk jaga keamanan acara pernikahan. Semua alat berfungsi sempurna, respon cepat, harga sangat terjangkau. Pasti akan sewa lagi!",
+    name: "Ahmad Rasyid",
+    role: "Panitia Wedding, Yogyakarta",
+    avatar: "AR",
+  },
+  {
+    stars: 5,
+    text: "Proyektor dan sound system untuk seminar kampus. Pengiriman tepat waktu, teknisi bantu setup, hasil memuaskan. Recommended banget untuk EO dan organisasi kampus!",
+    name: "Dinda Sari",
+    role: "BEM Universitas, Yogyakarta",
+    avatar: "DS",
+  },
+  {
+    stars: 5,
+    text: "Paket lengkap untuk acara olahraga, dari HT koordinator sampai sound system lapangan. Harga bersaing, pelayanan profesional. Sudah 3x sewa di sini.",
+    name: "Budi Wibowo",
+    role: "Penyelenggara Turnamen, Sleman",
+    avatar: "BW",
+  },
+];
+
+export default async function Testimonials() {
+  let reviews: ReviewItem[] = defaultReviews;
+
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("testimonials")
+      .select("*")
+      .eq("is_active", true)
+      .order("order_index", { ascending: true })
+      .order("created_at", { ascending: false });
+
+    if (data && data.length > 0) {
+      reviews = data;
+    }
+  } catch {
+    // Gunakan fallback defaultReviews jika ada kendala koneksi
+  }
 
   return (
     <section id="testimoni" className="py-20 px-4 sm:px-6 bg-slate-50" aria-labelledby="testi-heading">
@@ -41,11 +70,11 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {reviews.map((r, i) => (
             <div
-              key={i}
+              key={r.id || i}
               className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between"
             >
               <div>
-                <div className="flex gap-1 text-amber-400 mb-4 text-sm" aria-label="5 dari 5 bintang">
+                <div className="flex gap-1 text-amber-400 mb-4 text-sm" aria-label={`${r.stars} dari 5 bintang`}>
                   {"★".repeat(r.stars)}
                 </div>
                 <p className="text-slate-700 italic text-sm sm:text-base leading-relaxed mb-6">
@@ -55,7 +84,7 @@ export default function Testimonials() {
 
               <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
                 <div className="w-10 h-10 rounded-full bg-[#1a2744] text-white font-bold text-sm flex items-center justify-center shrink-0">
-                  {r.avatar}
+                  {r.avatar || r.name.slice(0, 2).toUpperCase()}
                 </div>
                 <div>
                   <div className="text-sm font-bold text-[#1a2744]">{r.name}</div>
