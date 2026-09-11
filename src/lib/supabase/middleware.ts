@@ -33,8 +33,8 @@ export async function updateSession(request: NextRequest) {
 
   const pathname = request.nextUrl.pathname;
 
-  // Proteksi rute /admin
-  if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
+  // Jika belum login dan mengakses area terproteksi (/admin selain /admin/login)
+  if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
     if (!user) {
       const url = request.nextUrl.clone();
       url.pathname = "/admin/login";
@@ -42,8 +42,8 @@ export async function updateSession(request: NextRequest) {
     }
   }
 
-  // Jika sudah login dan buka /admin/login, redirect ke /admin
-  if (pathname === "/admin/login" && user) {
+  // Jika sudah login dan mengakses /admin/login
+  if (pathname.startsWith("/admin/login") && user) {
     const url = request.nextUrl.clone();
     url.pathname = "/admin";
     return NextResponse.redirect(url);
