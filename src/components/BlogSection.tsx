@@ -5,10 +5,13 @@ interface ArticleItem {
   id?: string;
   slug: string;
   cover_emoji_or_image?: string;
+  featured_image?: string;
+  featured_image_alt?: string;
   category: string;
   title: string;
   excerpt: string;
   read_time: string;
+  tags?: string[];
   published_at?: string;
 }
 
@@ -83,12 +86,30 @@ export default async function BlogSection() {
               className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="h-40 flex items-center justify-center text-5xl bg-blue-50">
-                  {item.cover_emoji_or_image || "📝"}
-                </div>
+                {item.featured_image ? (
+                  <div className="h-40 overflow-hidden bg-slate-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.featured_image}
+                      alt={item.featured_image_alt || item.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="h-40 flex items-center justify-center text-5xl bg-blue-50">
+                    {item.cover_emoji_or_image || "📝"}
+                  </div>
+                )}
                 <div className="p-6">
-                  <div className="text-xs font-bold text-blue-600 uppercase tracking-wide mb-2">
-                    {item.category}
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="text-xs font-bold text-blue-600 uppercase tracking-wide">
+                      {item.category}
+                    </span>
+                    {item.tags && item.tags.length > 0 && (
+                      <span className="text-[11px] text-slate-400">
+                        #{item.tags[0]}
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-base font-bold text-[#1a2744] mb-2.5 leading-snug line-clamp-2">
                     <Link href={`/blog/${item.slug}`} className="hover:text-blue-600 transition">
