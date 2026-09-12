@@ -12,9 +12,9 @@ export default async function AdminLayout({
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Guard di level server layout
+  // Jika belum login, render children saja (agar /admin/login bisa tampil tanpa loop redirect)
   if (!user) {
-    redirect("/admin/login");
+    return <>{children}</>;
   }
 
   async function handleLogout() {
