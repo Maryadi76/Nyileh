@@ -111,8 +111,8 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="bg-slate-50 py-16 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <div className="bg-slate-50">
+      <div className="py-16 px-4 sm:px-6 max-w-6xl mx-auto space-y-12">
         {/* Breadcrumb & Header */}
         <div className="space-y-4">
           <nav className="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-2">
@@ -191,9 +191,7 @@ export default async function BlogPage() {
         </div>
       </div>
 
-      <div className="mt-20">
-        <CTASection />
-      </div>
+      <CTASection />
     </div>
   );
 }

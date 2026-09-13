@@ -100,14 +100,14 @@ export default async function BlogDetailPage({
   };
 
   return (
-    <div className="bg-slate-50 py-16 px-4 sm:px-6">
+    <div className="bg-slate-50">
       {/* Article Schema Injection */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-3xl mx-auto space-y-8 py-16 px-4 sm:px-6">
         {/* Breadcrumb */}
         <nav className="text-xs font-semibold text-slate-500 uppercase tracking-wider flex items-center gap-2">
           <Link href="/" className="hover:text-blue-600 transition">
@@ -264,9 +264,7 @@ export default async function BlogDetailPage({
         </div>
       </div>
 
-      <div className="mt-20">
-        <CTASection />
-      </div>
+      <CTASection />
     </div>
   );
 }
