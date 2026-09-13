@@ -44,6 +44,12 @@ export default async function AdminLayout({
               📊 Overview
             </Link>
             <Link
+              href="/admin/products"
+              className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors text-slate-200"
+            >
+              📦 Katalog Produk
+            </Link>
+            <Link
               href="/admin/testimonials"
               className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors text-slate-200"
             >
