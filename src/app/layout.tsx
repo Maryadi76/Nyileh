@@ -54,6 +54,13 @@ export const metadata: Metadata = {
       "Sewa HT, proyektor, sound system & perlengkapan event lainnya di Yogyakarta.",
     images: ["/og-image.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/logo.jpg", type: "image/jpeg" },
+    ],
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   robots: {
     index: true,
     follow: true,
@@ -68,6 +75,8 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} scroll-smooth`}>
       <head>
+        <link rel="icon" href="/logo.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/logo.jpg" />
         <JsonLd />
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased bg-white text-slate-900">
