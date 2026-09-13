@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SiteLayoutWrapper from "@/components/SiteLayoutWrapper";
 import JsonLd from "@/components/JsonLd";
+import PageViewTracker from "@/components/PageViewTracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,6 +71,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased bg-white text-slate-900">
+        <PageViewTracker />
         <SiteLayoutWrapper>{children}</SiteLayoutWrapper>
       </body>
     </html>
