@@ -2,6 +2,8 @@ import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 
 export async function generateMetadata({
@@ -171,9 +173,76 @@ export default async function BlogDetailPage({
           {article.excerpt}
         </p>
 
-        {/* Main Content Body */}
-        <div className="prose prose-slate max-w-none text-slate-800 leading-relaxed space-y-4 whitespace-pre-line text-base sm:text-lg">
-          {article.content}
+        {/* Main Content Body (Markdown Parsed with Typography Styling) */}
+        <div className="bg-white p-6 sm:p-10 rounded-2xl border border-slate-200 shadow-sm">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h2: ({ ...props }) => (
+                <h2
+                  className="text-2xl sm:text-3xl font-bold text-[#1a2744] mt-8 mb-4 pt-4 border-t border-slate-100 first:mt-0 first:pt-0"
+                  {...props}
+                />
+              ),
+              h3: ({ ...props }) => (
+                <h3
+                  className="text-xl sm:text-2xl font-bold text-[#1a2744] mt-6 mb-3"
+                  {...props}
+                />
+              ),
+              p: ({ ...props }) => (
+                <p className="text-slate-700 leading-relaxed mb-4 text-base sm:text-lg" {...props} />
+              ),
+              ul: ({ ...props }) => (
+                <ul className="list-disc list-outside pl-6 space-y-2 mb-6 text-slate-700 text-base sm:text-lg" {...props} />
+              ),
+              ol: ({ ...props }) => (
+                <ol className="list-decimal list-outside pl-6 space-y-2 mb-6 text-slate-700 text-base sm:text-lg" {...props} />
+              ),
+              li: ({ ...props }) => <li className="leading-relaxed" {...props} />,
+              blockquote: ({ ...props }) => (
+                <blockquote
+                  className="border-l-4 border-blue-600 pl-4 py-2 my-6 italic bg-blue-50/50 text-slate-800 rounded-r-xl"
+                  {...props}
+                />
+              ),
+              a: ({ href, ...props }) => (
+                <a
+                  href={href}
+                  target={href?.startsWith("http") ? "_blank" : undefined}
+                  rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="text-blue-600 hover:text-blue-800 font-medium underline underline-offset-4 transition"
+                  {...props}
+                />
+              ),
+              // eslint-disable-next-line @next/next/no-img-element
+              img: ({ src, alt }) => (
+                <span className="block my-6 rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={src} alt={alt || "Gambar artikel"} className="w-full h-auto object-cover" />
+                  {alt && (
+                    <span className="block text-center text-xs text-slate-400 py-2 bg-slate-50 border-t border-slate-100">
+                      {alt}
+                    </span>
+                  )}
+                </span>
+              ),
+              strong: ({ ...props }) => <strong className="font-bold text-slate-900" {...props} />,
+              table: ({ ...props }) => (
+                <div className="overflow-x-auto my-6 border border-slate-200 rounded-xl">
+                  <table className="min-w-full divide-y divide-slate-200 text-sm" {...props} />
+                </div>
+              ),
+              th: ({ ...props }) => (
+                <th className="bg-slate-50 px-4 py-2.5 text-left font-bold text-slate-800" {...props} />
+              ),
+              td: ({ ...props }) => (
+                <td className="px-4 py-2 border-t border-slate-100 text-slate-700" {...props} />
+              ),
+            }}
+          >
+            {article.content}
+          </ReactMarkdown>
         </div>
 
         {/* CTA Contact */}

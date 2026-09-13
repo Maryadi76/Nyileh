@@ -47,29 +47,29 @@ export default function Footer() {
             <h3 className="text-white font-bold text-sm tracking-wider uppercase mb-4">Produk</h3>
             <ul className="space-y-2.5 text-sm list-none">
               <li>
-                <a href="#katalog" className="hover:text-white transition-colors">
+                <Link href="/#katalog" className="hover:text-white transition-colors">
                   Sewa HT / Handy Talky
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#katalog" className="hover:text-white transition-colors">
+                <Link href="/#katalog" className="hover:text-white transition-colors">
                   Sewa Proyektor
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#katalog" className="hover:text-white transition-colors">
+                <Link href="/#katalog" className="hover:text-white transition-colors">
                   Sewa Sound System
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#katalog" className="hover:text-white transition-colors">
+                <Link href="/#katalog" className="hover:text-white transition-colors">
                   Sewa Lighting
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#katalog" className="hover:text-white transition-colors">
+                <Link href="/#katalog" className="hover:text-white transition-colors">
                   Sewa Microphone
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,29 +79,29 @@ export default function Footer() {
             <h3 className="text-white font-bold text-sm tracking-wider uppercase mb-4">Informasi</h3>
             <ul className="space-y-2.5 text-sm list-none">
               <li>
-                <a href="#cara-sewa" className="hover:text-white transition-colors">
+                <Link href="/#cara-sewa" className="hover:text-white transition-colors">
                   Cara Sewa
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#area" className="hover:text-white transition-colors">
+                <Link href="/#area" className="hover:text-white transition-colors">
                   Area Layanan
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#faq" className="hover:text-white transition-colors">
+                <Link href="/#faq" className="hover:text-white transition-colors">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#testimoni" className="hover:text-white transition-colors">
+                <Link href="/#testimoni" className="hover:text-white transition-colors">
                   Testimoni
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#blog" className="hover:text-white transition-colors">
+                <Link href="/blog" className="hover:text-white transition-colors">
                   Blog & Tips
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

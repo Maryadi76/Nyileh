@@ -8,13 +8,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Katalog", href: "#katalog" },
-    { name: "Cara Sewa", href: "#cara-sewa" },
-    { name: "Keunggulan", href: "#kenapa-kami" },
-    { name: "Area Layanan", href: "#area" },
-    { name: "Testimoni", href: "#testimoni" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "#blog" },
+    { name: "Katalog", href: "/#katalog" },
+    { name: "Cara Sewa", href: "/#cara-sewa" },
+    { name: "Keunggulan", href: "/#kenapa-kami" },
+    { name: "Area Layanan", href: "/#area" },
+    { name: "Testimoni", href: "/#testimoni" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (

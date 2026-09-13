@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTASection() {
   return (
     <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4 sm:px-6 text-center" aria-labelledby="cta-heading">
@@ -18,12 +20,12 @@ export default function CTASection() {
           >
             💬 Chat WhatsApp Sekarang
           </a>
-          <a
-            href="#katalog"
+          <Link
+            href="/#katalog"
             className="border-2 border-white/50 hover:border-white hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:-translate-y-0.5"
           >
             Lihat Semua Katalog
-          </a>
+          </Link>
         </div>
       </div>
     </section>
