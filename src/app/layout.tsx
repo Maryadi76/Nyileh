@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SiteLayoutWrapper from "@/components/SiteLayoutWrapper";
 import JsonLd from "@/components/JsonLd";
@@ -80,6 +81,20 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased bg-white text-slate-900">
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-7G0NT12PJC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7G0NT12PJC');
+          `}
+        </Script>
         <PageViewTracker />
         <SiteLayoutWrapper>{children}</SiteLayoutWrapper>
       </body>
