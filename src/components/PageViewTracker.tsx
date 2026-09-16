@@ -21,7 +21,14 @@ export default function PageViewTracker() {
         const deviceType = isMobile ? "Mobile" : "Desktop";
 
         // Deteksi sumber trafik (Referrer)
-        let referrer = document.referrer ? new URL(document.referrer).hostname : "Direct";
+        let referrer = "Direct";
+        if (document.referrer) {
+          try {
+            referrer = new URL(document.referrer).hostname;
+          } catch {
+            referrer = document.referrer;
+          }
+        }
         if (referrer.includes("google")) referrer = "Google Search";
         else if (referrer.includes("instagram")) referrer = "Instagram";
         else if (referrer.includes("facebook")) referrer = "Facebook";
