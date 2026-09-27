@@ -2,33 +2,33 @@ export default function WhyUs() {
   const perks = [
     {
       icon: "⚡",
-      title: "Respon Kilat",
-      desc: "WhatsApp kami aktif 7 hari seminggu. Pertanyaan dijawab dalam hitungan menit, bukan jam.",
+      title: "Respon Kilat via WhatsApp",
+      desc: "Fast response 7 hari seminggu. Cek ketersediaan alat dan konsultasi paket dijawab dalam hitungan menit.",
     },
     {
       icon: "🛡️",
-      title: "Alat Bergaransi",
-      desc: "Setiap alat dicek dan ditest sebelum pengiriman. Jika ada masalah teknis, kami ganti atau perbaiki di tempat.",
+      title: "Unit 100% Ditest Sebelum Kirim",
+      desc: "Baterai HT full, kabel lengkap & dites, lensa proyektor bersih. Nggak ada drama alat rusak saat hari-H.",
     },
     {
       icon: "💰",
-      title: "Harga Terbaik",
-      desc: "Harga kompetitif dan transparan. Ada diskon untuk sewa lebih dari 3 hari atau paket bundling alat.",
+      title: "Harga Transparan & Hemat",
+      desc: "Tarif sewa jelas tanpa biaya tersembunyi. Tersedia potongan harga untuk sewa multi-hari atau paket bundling.",
     },
     {
       icon: "🚚",
-      title: "Antar-Jemput Sendiri",
-      desc: "Tidak perlu repot transport alat berat. Tim kami antar ke venue dan jemput kembali setelah event selesai.",
+      title: "Layanan Antar-Jemput Venue",
+      desc: "Nggak perlu repot ambil barang berat. Tim kami siap antar ke venue (kampus, hotel, gedung) di Sleman, Bantul, dan Kota Jogja.",
     },
     {
       icon: "🎯",
-      title: "Konsultasi Gratis",
-      desc: "Bingung butuh alat apa? Ceritakan jenis eventmu dan kami rekomendasikan paket perlengkapan yang pas.",
+      title: "Bisa Sewa Dadakan",
+      desc: "Butuh tambahan HT atau proyektor H-1 bahkan di hari yang sama? Chat kami langsung untuk cek stok instan.",
     },
     {
       icon: "📋",
-      title: "Kontrak Jelas",
-      desc: "Setiap transaksi ada nota dan perjanjian sewa yang jelas. Hak dan kewajiban kedua pihak terlindungi.",
+      title: "Nota & Administrasi Jelas",
+      desc: "Mendukung kebutuhan LPJ kepanitiaan kampus, EO, maupun corporate dengan invoice dan nota resmi.",
     },
   ];
 
@@ -40,10 +40,10 @@ export default function WhyUs() {
             Keunggulan
           </div>
           <h2 id="kenapa-heading" className="text-2xl sm:text-4xl font-extrabold text-white">
-            Kenapa pilih Nyileh.id?
+            Kenapa Ratusan Panitia Memilih Nyileh.id?
           </h2>
           <p className="text-slate-300 text-sm sm:text-base">
-            Kami bukan sekedar tempat sewa. Kami adalah partner teknis suksesnya eventmu.
+            Kami bukan sekadar tempat sewa. Kami adalah partner teknis yang memastikan acaramu berjalan tanpa kendala alat.
           </p>
         </div>
 

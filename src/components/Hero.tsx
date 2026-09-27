@@ -24,32 +24,32 @@ export default function Hero() {
         {/* Hero Left Content */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-200 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-sm shadow-inner">
-            <span>⭐</span> #1 Rental Event di Jogja
+            <span>⚡</span> Siap Antar ke Venue · Sleman, Bantul, Kota Jogja
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
-            Sewa HT, Proyektor & Alat Event di Jogja <br className="hidden sm:inline" />
-            <span className="text-blue-400">Mudah, Cepat,</span> Terpercaya
+            Sewa HT & Alat Event di Jogja Tanpa Ribet. <br className="hidden sm:inline" />
+            <span className="text-blue-400">Unit Bersih, Baterai Full, Siap Pakai.</span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-200 max-w-xl leading-relaxed">
-            HT, proyektor, sound system & perlengkapan event lainnya. Siap pakai, harga transparan, dan layanan antar-jemput tersedia di Yogyakarta & sekitarnya.
+            Nggak perlu panik H-1 event kurang alat. Sewa HT, proyektor, sound, sampai lighting dengan pengecekan ketat sebelum dikirim. Kamu fokus di acara, urusan teknis biar kami yang handle.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="https://wa.me/6285179972448?text=Halo%20Nyileh.id%2C%20saya%20mau%20tanya%20stok%20alat"
+              href="https://wa.me/6285179972448?text=Halo%20Nyileh.id%2C%20saya%20mau%20cek%20stok%20alat%20event"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-xl font-bold text-base shadow-lg shadow-blue-600/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
-              💬 Chat WhatsApp
+              💬 Cek Stok via WhatsApp
             </a>
             <a
               href="#katalog"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-semibold text-base border-2 border-white/30 hover:border-white hover:bg-white/10 text-white transition-all transform hover:-translate-y-0.5"
             >
-              Lihat Katalog
+              Lihat Katalog & Harga
             </a>
           </div>
 
@@ -60,12 +60,12 @@ export default function Hero() {
               <div className="text-xs sm:text-sm text-slate-300">Event terlayani</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-white">50+</div>
-              <div className="text-xs sm:text-sm text-slate-300">Jenis alat</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-white">100%</div>
+              <div className="text-xs sm:text-sm text-slate-300">Unit dicek fisik & daya</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-extrabold text-white">4.9★</div>
-              <div className="text-xs sm:text-sm text-slate-300">Rating pelanggan</div>
+              <div className="text-xs sm:text-sm text-slate-300">Rating kepuasan</div>
             </div>
           </div>
         </div>

@@ -14,16 +14,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nyileh.id"),
-  title: "Nyileh.id – Sewa HT, Proyektor & Perlengkapan Event | Yogyakarta",
+  title: "Sewa HT & Proyektor Jogja – Antar Jemput Siap Pakai | Nyileh.id",
   description:
-    "Nyileh.id – Jasa sewa perlengkapan event terpercaya: HT, proyektor, sound system, dan lainnya. Harga terjangkau, pengiriman cepat, layanan profesional di Yogyakarta & sekitarnya.",
+    "Rental HT, proyektor, sound system & lighting di Yogyakarta. Unit dicek sebelum kirim, baterai full, kabel lengkap, bisa antar-jemput ke venue seluruh Jogja.",
   keywords: [
-    "sewa HT Yogyakarta",
-    "sewa proyektor Yogyakarta",
-    "sewa perlengkapan event Yogyakarta",
-    "rental HT DI Yogyakarta",
+    "sewa HT Jogja",
+    "rental handy talky Yogyakarta",
+    "sewa proyektor Jogja",
+    "sewa sound system Yogyakarta",
+    "rental alat event Sleman Bantul",
+    "sewa proyektor murah Jogja",
+    "persewaan alat event Yogyakarta",
     "nyileh id",
-    "sewa alat event murah Jogja",
   ],
   authors: [{ name: "Nyileh.id", url: "https://nyileh.id" }],
   creator: "Nyileh.id",
@@ -35,9 +37,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://nyileh.id/",
-    title: "Nyileh.id – Sewa HT, Proyektor & Perlengkapan Event | Yogyakarta",
+    title: "Sewa HT & Proyektor Jogja – Antar Jemput Siap Pakai | Nyileh.id",
     description:
-      "Sewa HT, proyektor, sound system & perlengkapan event lainnya. Harga terjangkau, pengiriman cepat di Yogyakarta & sekitarnya.",
+      "Rental HT, proyektor, sound system & lighting di Yogyakarta. Unit dicek sebelum kirim, baterai full, bisa antar-jemput ke venue seluruh Jogja.",
     siteName: "Nyileh.id",
     images: [
       {
@@ -50,9 +52,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nyileh.id – Sewa HT, Proyektor & Perlengkapan Event | Yogyakarta",
+    title: "Sewa HT & Proyektor Jogja – Antar Jemput Siap Pakai | Nyileh.id",
     description:
-      "Sewa HT, proyektor, sound system & perlengkapan event lainnya di Yogyakarta.",
+      "Rental HT, proyektor, sound system & lighting di Yogyakarta. Siap antar-jemput ke venue.",
     images: ["/og-image.jpg"],
   },
   icons: {
